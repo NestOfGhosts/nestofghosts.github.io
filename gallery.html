@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Gallery</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css.css">
+
+</head>
+
+<body>
+
+    <header>
+        <img src="photosandblogs/banner.png">
+    </header>
+
+    <div id="gallerySection"></div>
+
+    <script>
+        fetch("photosandblogs/photolist.json") 
+            .then(response => response.json())
+                .then(photoslist => photoslist.forEach(filename => {
+                    fetch("photosandblogs/" + filename)
+                            .then(photo => {
+                                const entry = document.createElement("div")
+                                entry.classList.add("posts")
+                                entry.innerHTML = "<a href='" + photo + "'>"
+
+
+                                document.getElementById("gallerySection").appendChild(post)
+                            })
+                }))
+    </script>
+</body>
+</html>

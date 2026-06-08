@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>This is the title</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <header>
+        <img src="photosandblogs/banner.png">
+    </header>
+    <div class="row">
+        <div class="column">
+            <div class="section">
+                <h1>About Me</h1>
+                <p>Hi. I'm Nest(of ghosts). </p>
+            </div>
+            <div id="blogpreview">
+            </div>
+            <div class="section">
+                <h1>Future Photo/Meme Gallery</h1>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="section">
+                <h1>What is this</h1>
+                <p>I made this website to put my projects on display and to learn web design. It's kind of a combination of a blog, a crappy neal.fun, and a facebook profile</p>
+            </div>
+            <div class="section">
+                <h1>Future review section</h1>
+            </div>
+            <div class="section">
+                <h1>Future game section</h1>
+            </div>
+        </div>
+    </div>
+    <script>
+        fetch("photosandblogs/index.json")
+            .then (index => index.json())
+                .then (filelist => filelist[0])
+                    .then (firstpost => fetch ("photosandblogs/" + firstpost))
+                        .then (post => post.text())
+                            .then (text => {
+                                const post = document.createElement("div")
+                                post.classList.add("section")
+                                post.innerHTML = marked.parse("# Blog Section\n" + text + "\n\n Click to see more")
+                                document.getElementById("blogpreview").appendChild(post)
+                                post.onclick = () => {
+                                    window.location.href = "blog.html"
+                                }
+                            })
+
+
+    </script>
+</body>
+</html>

@@ -80,9 +80,22 @@
                             .then(result => {
                                 result.data.forEach(comments => {
                                     const comment = document.createElement("div")
-                                    comment.innerHTML += comments.username + "<br>"   
-                                    comment.innerHTML += new Date(comments.created_at).toLocaleString() + "<br>"  
-                                    comment.innerHTML += comments.comment + "<br><br>"
+                                    comment.classList.add("comment")
+                                    const username = document.createElement("p")
+                                    username.textContent = comments.username
+                                    comment.appendChild(username)   
+
+                                    const date = document.createElement("p")
+                                    date.innerHTML = new Date(comments.created_at).toLocaleString() + "<br>" 
+                                    comment.appendChild(date)
+
+                                    const commentContent =  document.createElement("p") 
+                                    commentContent.textContent = comments.comment
+                                    comment.appendChild(commentContent)
+
+                                    
+                                    
+                                    
                                     commentSection.appendChild(comment)
                             })
                         })
@@ -90,12 +103,22 @@
                         post.appendChild(commentSection)
 
                         document.getElementById("blog-container").appendChild(post)
-                    
-                
-
-
 
                                 submit.onclick = () => {
+                                    if (usernameInput.value.length < 1 ) {
+                                        alert("Plz add a username")
+                                        return
+                                    }
+
+                                    else if (usernameInput.value.length > 30) {
+                                        alert("Usernames must be less than 30 characters long")
+                                        return    
+                                    }
+
+                                    else if (commentInput.value.length < 5 || commentInput.value.length > 100) {
+                                        alert("Comments must be within 5-100 characters long")
+                                        return
+                                    }
                                     db.from("Comments").insert({
                                         post: filename,
                                         username: usernameInput.value,

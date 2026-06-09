@@ -21,7 +21,7 @@
                 <h1>About Me</h1>
                 <p>Hi. I'm Nest(of ghosts). </p>
             </div>
-            <div id="blogpreview">
+            <div id="blogPreview">
             </div>
             <div class="section">
                 <h1>Future Photo/Meme Gallery</h1>
@@ -51,7 +51,7 @@
                                 const post = document.createElement("div")
                                 post.classList.add("section")
                                 post.innerHTML = marked.parse("# Blog Section\n" + text + "\n\n Click to see more")
-                                document.getElementById("blogpreview").appendChild(post)
+                                document.getElementById("blogPreview").appendChild(post)
                                 post.onclick = () => {
                                     window.location.href = "blog.html"
                                 }

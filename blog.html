@@ -15,17 +15,17 @@
 
 <body>
     <header>
-        <img src="photosandblogs/banner.png">
+        <a href="index.html">
+            <img src="photosandblogs/banner.png">
+        </a>
     </header>
 
-    <div id="blog-container">
+    <div id="blogContainer">
     
     </div>
     <script>
         const db = window.supabase.createClient("https://mekxwqreqqmdhziicjpw.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1la3h3cXJlcXFtZGh6aWljanB3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk1NzU3MTEsImV4cCI6MjA5NTE1MTcxMX0.Nc9hUZLJBGpH75VbvQYB4vkT-JUQfe5FRbDOVFV6TPM")
         db.from("Comments").select("*").then(result => console.log(result))
-
-
         
         fetch("photosandblogs/index.json") 
             .then(response => response.json())
@@ -102,7 +102,7 @@
 
                         post.appendChild(commentSection)
 
-                        document.getElementById("blog-container").appendChild(post)
+                        document.getElementById("blogContainer").appendChild(post)
 
                                 submit.onclick = () => {
                                     if (usernameInput.value.length < 1 ) {

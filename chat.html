@@ -1,0 +1,97 @@
+<html>
+<head>
+    <title>
+        Chatroom
+    </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="photosandblogs/banner.png">
+        </a>
+    </header>
+
+    <div class="posts" id="chat"></div>
+
+    <div class="posts" id="messageSubmit">
+        <input id="usernameInput" placeholder="Username">
+        <input id="messageInput" placeholder="Message">
+        <button id="submitButton">Send</button>
+    </div>
+
+    <script>
+        const db = window.supabase.createClient("https://mekxwqreqqmdhziicjpw.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1la3h3cXJlcXFtZGh6aWljanB3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk1NzU3MTEsImV4cCI6MjA5NTE1MTcxMX0.Nc9hUZLJBGpH75VbvQYB4vkT-JUQfe5FRbDOVFV6TPM")
+        db.from("Chatroom").select("*").order('created_at', { ascending: true })
+            .then(messages =>{
+                messages.data.forEach(message => {
+                    const theIndivisualComment = document.createElement("p")
+
+                    const spacer = document.createElement("br")
+
+                    const username = document.createElement("span")
+                    username.textContent = message.username
+                    theIndivisualComment.appendChild(username)
+                    theIndivisualComment.appendChild(spacer)
+
+                    const dnt = document.createElement("span")
+                    dnt.innerHTML = new Date(message.created_at).toLocaleString() + "<br>"
+                    theIndivisualComment.appendChild(dnt)
+
+                    const content = document.createElement("span")
+                    content.textContent = message.message
+                    theIndivisualComment.appendChild(content)
+
+                    document.getElementById("chat").appendChild(theIndivisualComment)
+                })
+                chat.scrollTop = chat.scrollHeight
+            })
+            
+        usernameInput.value = localStorage.getItem("username")
+        submitButton.onclick = () => {
+            if (usernameInput.value.length < 1 ) {
+                alert("Plz add a username")
+                return
+            }
+
+            else if (usernameInput.value.length > 30) {
+                alert("Usernames must be less than 30 characters long")
+                return    
+            }
+
+            else if (messageInput.value.length < 5 || messageInput.value.length > 100) {
+                alert("Comments must be within 5-100 characters long")
+                return
+            }
+
+            else if (usernameInput.value === "Nest"){
+                alert("Don't impersonate me >:(")
+                return
+            }
+
+            db.from("Chatroom").insert({
+                username: usernameInput.value,
+                message: messageInput.value
+            }).then(() => {
+                const newMessage = document.createElement("p")
+                newMessage.innerHTML += usernameInput.value  
+                newMessage.innerHTML += "<br>" + new Date().toLocaleString() 
+                newMessage.innerHTML += "<br>" + messageInput.value
+                document.getElementById("chat").appendChild(newMessage)
+                messageInput.value = ""
+                chat.scrollTop = chat.scrollHeight
+                localStorage.setItem("username", usernameInput.value)
+            })
+        }
+        
+    </script>
+</body>
+</html>

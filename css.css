@@ -111,3 +111,8 @@ header {
 .comment {
     margin-top: 1em;
 }
+
+#chat {
+    height: calc(100vh - 373px);
+    overflow-y: auto;
+}

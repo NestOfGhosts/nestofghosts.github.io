@@ -45,6 +45,7 @@ header {
     color: var(--text);
     background-color: var(--back2);
     font-family: var(--font);
+    overflow-wrap: break-word;
 
     border-radius: 0.1in;
     padding: 18px;
@@ -94,6 +95,7 @@ header {
 }
 
 .commentSection {
+    overflow-wrap: break-word;
     display: none;
     & p {
         margin: 0;

@@ -115,6 +115,10 @@
                                         alert("Comments must be within 5-100 characters long")
                                         return
                                     }
+                                    else if (usernameInput.value === "Nest"){
+                                        alert("Don't impersonate me >:(")
+                                        return
+                                    }
                                     db.from("Comments").insert({
                                         post: filename,
                                         username: usernameInput.value,

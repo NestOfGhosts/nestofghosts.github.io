@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="BHCSS.css">
+</head>
+<body>
+    <header id="header">
+    </header>
+
+    <script>
+        function rnd(min, max) {
+            return Math.floor(Math.random() * (max - min +1)) + min;
+        }
+
+        fetch("greetings.json")
+            .then(file => file.json())
+                .then(greetings => {
+                    const header = document.createElement("h1")
+                    const time = new Date().toLocaleTimeString([], {
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    });
+                    header.textContent = greetings[rnd(0, 11)] + " It's " + time
+                    document.getElementById("header").appendChild(header)
+
+                    
+                })
+    </script>
+
+    <div class="grid">
+        <div class="section">
+            <a href="https://youtube.com">
+                <img src="Logos/YouTubeLogo.png">
+            </a>
+            
+        </div>
+
+        <div class="section">
+            <a href="https://youtube.com/shorts">
+                <img src="Logos/YTShortsLogo.png">
+            </a>
+        </div>
+
+        <div class="section">
+            <a href="https://nebula.com">
+                <img src="Logos/NebulaLogo.png">
+            </a>
+        </div>
+
+        <div class="section">
+            <a href="https://discord.com/channels/@me">
+                <img src="Logos/DiscordLogo.png">
+            </a>
+        </div>
+
+        <div class="section">
+            <a href="https://claude.ai">
+                <img src="Logos/Claude.png">
+            </a>
+        </div>
+
+        <div class="section">
+            <a href="https://supabase.com/dashboard/">
+                <img src="Logos/SupabaseLogo.png">
+            </a>
+        </div>
+
+        <div class="section">
+            <a href="https://github.com/NestOfGhosts/nestofghosts.github.io">
+                <img src="Logos/GithubLogo.png">
+            </a>
+        </div>
+
+        <div class="section">
+            <a href="https://nestofghosts.github.io">
+                <img src="Logos/banner.png">
+            </a>
+        </div>
+
+        <div class="section">
+            <a href="https://itch.io/games/platform-web">
+                <img src="Logos/ItchLogo.svg">
+            </a>
+        </div>
+
+        <div class="section">
+            <a href="https://neal.fun/">
+                <img src="Logos/Neal.funLogo.png">
+            </a>
+        </div>
+
+        <div class="section">
+            <a href="https://store.steampowered.com/">
+                <img src="Logos/SteamLogo.png">
+            </a>
+        </div>
+
+        <div class="section">
+            <a href="https://gx.games/">
+                <img src="Logos/GXGamesLogo.png">
+            </a>
+        </div>
+    </div>
+    <script>
+        const body = document.body
+        const hour = new Date().getHours()
+        if (hour > 7 && hour < 19) { body.classlist.add("day")}
+        else {body.classList.add("night")}
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+:root {
+    --text: #f5f5f5;
+    --font: "Inconsolata", monospace;
+    --backMain: #090808;
+    --back2: #2a2a2a;
+    --accent1: #5B00A6;
+    --accent2: #2E004A;
+}
+
+body {
+    color: var(--text);
+    font-family: var(--font);
+    text-align: center;
+
+    background-size: cover;
+    background-attachment: fixed;
+
+    :link {
+        color: var(--text);
+    }
+    :visited {
+        color: var(--text);
+    }
+}
+
+.day {
+    background-image: url(Logos/DayBackground.jpeg);
+}
+
+.night {
+    background-image: url(Logos/NightBackground.jpg);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 3em;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.section {
+    border-radius: 0.1in;
+    overflow: hidden;
+
+    margin-bottom: 19px;
+    padding: 5px;
+    background-color: var(--back2);
+    align-content: center;
+    & img {
+        width: 100%;
+        object-fit: contain;
+    }
+
+    transition: all .4s ease;
+    &:hover {
+        background-color: var(--accent2);
+        transform: scale(1.05);
+    }
+    
+}
+
+header {
+    height: 6em;
+    font-size: x-large;
+}

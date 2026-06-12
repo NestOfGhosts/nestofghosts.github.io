@@ -6,6 +6,8 @@ V3 is out! I added a project showcase and my very first coding project (a browse
 
 I really like the plasma backdrop. very clean. very nice. 4 variants.
 
+I took advantage of the light mode and dark mode plasma backdrops by basically making it so that when the page loads it looked at the time, if it was after 7 am it would show the light mode backdrop, and after 7pm it would show the dark one. Which is a touch i personally really liked :)
+
 The links are basically the only sites I use, and i am _not_ planning on making it customizable, mostly because of the way I got the logos.
 
 This was a very simple project. I used css grid to create a 4x3 link grid. The links use <a> to redirect ppl (obvs), followed by the logo.

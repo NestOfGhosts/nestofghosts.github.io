@@ -1,8 +1,62 @@
 [
-    "chick.jpeg",
-    "banner.jpeg",
-    "finalblogcode.png",
-    "coolguyspam1.png",
-    "coolguyspam2",
-    "coolguyspam3"
+    {
+        "file": "chick.jpeg", 
+        "title": "my avatar on most things(Chicken)", 
+        "DOR": "June 12 2026"
+    },
+
+    {
+        "file": "banner.png", 
+        "title": "the banner at the top of the page", 
+        "DOR":"June 12 2026"
+    },
+
+    {
+        "file": "finalblogcode.png", 
+        "title": "the (absolutely not) latest code of the blog section",
+        "DOR": "June 12 2026"
+    },
+
+    {
+        "file": "coolguyspam1.png",
+        "title": "the comment section being broken",
+        "DOR": "June 12 2026"
+    },
+
+    {
+       "file": "coolguyspam2.png",
+       "title": "the comment section being broken cont.",
+       "DOR": "June 12 2026"
+    },    
+    
+    {
+        "file": "coolguyspam3.png",
+        "title": "the comment section being broken ft. Weezer",
+        "DOR": "June 12 2026"
+    },
+
+    {
+        "file": "DigitalCircusAfterCredits.jpg",
+        "title": "A qr code that showed after the digital circus movie's credits",
+        "DOR": "June 12 2026"
+    },
+
+    {
+        "file": "GridCode.png",
+        "title": "CSS Grid code",
+        "DOR": "June 12 2026"
+    },
+
+    {
+        "file": "Home.png",
+        "title": "Very aesthetic wallpaper + links",
+        "DOR": "June 12 2026"
+    },
+
+    {
+        "file": "HomepageCode.png",
+        "title": "The code for the homepage",
+        "DOR":"June 12 2026"
+    }
+
 ]

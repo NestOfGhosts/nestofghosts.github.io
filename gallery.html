@@ -12,27 +12,43 @@
 </head>
 
 <body>
-
     <header>
-        <img src="photosandblogs/banner.png">
+        <a href="index.html">
+            <img src="photosandblogs/banner.png">
+        </a>
     </header>
 
-    <div id="gallerySection"></div>
+    <div id="gallerySection" class="gallery"></div>
 
     <script>
-        fetch("photosandblogs/photolist.json") 
-            .then(response => response.json())
-                .then(photoslist => photoslist.forEach(filename => {
-                    fetch("photosandblogs/" + filename)
-                            .then(photo => {
-                                const entry = document.createElement("div")
-                                entry.classList.add("posts")
-                                entry.innerHTML = "<a href='" + photo + "'>"
+    fetch("photosandblogs/photolist.json")
+        .then(file => file.json())
+            .then(list => {
+                list.forEach(photo => {
+                    const section = document.createElement("div")
+                    section.classList.add("section")
 
+                    const clickable = document.createElement("a")
+                    clickable.href = "photosandblogs/" + photo.file
 
-                                document.getElementById("gallerySection").appendChild(post)
-                            })
-                }))
+                    const title = document.createElement("h2")
+                    title.textContent = photo.title
+                    clickable.appendChild(title)
+
+                    const date = document.createElement("p")
+                    date.textContent = photo.DOR
+                    clickable.appendChild(date)
+
+                    const image = document.createElement("img")
+                    image.src = "photosandblogs/" + photo.file
+                    clickable.appendChild(image)
+
+                    section.appendChild(clickable)
+
+                    document.getElementById("gallerySection").appendChild(section)
+                })
+            })
+      
     </script>
 </body>
 </html>

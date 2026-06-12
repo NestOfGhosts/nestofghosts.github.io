@@ -112,6 +112,23 @@ header {
     margin-top: 1em;
 }
 
+.gallery {
+    columns: 4;
+    font-size: small;
+    gap: 2em;
+
+    &.section {
+        break-inside: avoid;
+
+    }
+    :link {
+        text-decoration: none;
+    }
+    :visited {
+        text-decoration: none;
+    }
+}
+
 #chat {
     height: calc(100vh - 373px);
     overflow-y: auto;

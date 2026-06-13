@@ -12,9 +12,11 @@ body {
     background-color: var(--backMain);
     :link {
         color: var(--text);
+        text-decoration: none;
     }
     :visited {
         color: var(--text);
+        text-decoration: none;
     }
 }
 img {

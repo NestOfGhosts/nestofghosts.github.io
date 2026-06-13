@@ -34,7 +34,7 @@
             <div class="section">
                 <h1>What is this</h1>
                 <p>
-                    I'm making this website to put my projects on display and to learn web design. It's kind of a combination of a blog, a crappy neal.fun, and a facebook profile. As of V2.1 there aren't any projects yet, but there is a blog section and a chatroom.
+                    I'm making this website to put my projects on display and to learn web design. It's kind of a combination of a blog, a crappy neal.fun, and a facebook profile. As of V4 there is one project, and there is a blog section and a chatroom.
                     <br><br>
                     It is very much WIP, and the code is on <a href="https://github.com/NestOfGhosts/nestofghosts.github.io">the github repo</a>
                 </p>
@@ -97,7 +97,10 @@
             .then(file => file.text())
                 .then(abtme => {
                     const someText = document.createElement("div")
-                    someText.innerHTML = marked.parse(abtme)
+                    const clickable = document.createElement("a")
+                    clickable.href = "aboutMe.html"
+                    clickable.innerHTML = marked.parse(abtme)
+                    someText.appendChild(clickable)
                     document.getElementById("aboutMe").appendChild(someText)
                 })
 

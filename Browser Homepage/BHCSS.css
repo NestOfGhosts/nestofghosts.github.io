@@ -34,8 +34,9 @@ body {
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 3em;
+
+    gap: 1em;
+    
     margin-left: 2em;
     margin-right: 2em;
 }
@@ -43,7 +44,6 @@ body {
 .section {
     border-radius: 0.1in;
     overflow: hidden;
-
     margin-bottom: 19px;
     padding: 5px;
     background-color: var(--back2);
@@ -51,6 +51,7 @@ body {
     & img {
         width: 100%;
         object-fit: contain;
+        height: 80px;
     }
 
     transition: all .4s ease;

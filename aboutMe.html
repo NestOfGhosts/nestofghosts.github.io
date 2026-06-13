@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About me</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+
+
+<body>
+<header>
+    <a href="index.html">
+        <img src="files/banner.png">
+    </a>
+</header>
+
+<div class="section" id="abtme">
+
+</div>
+
+<div class="section">
+    <h1>Profiles/Contacts</h1>
+    <p>
+        Discord: nestofghosts <br>
+        Steam: NestOfGhosts
+    </p>
+</div>
+
+<script>
+    fetch("files/AboutMe.md")
+        .then(file => file.text())
+            .then(file => {
+                const bio = document.createElement("div")
+                bio.innerHTML = marked.parse(file)
+                document.getElementById("abtme").appendChild(bio)
+                
+            })
+</script>
+</body>
+</html>

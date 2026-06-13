@@ -4,11 +4,11 @@
 
 I gave my friend(He chose the username "coolguy" and i will refer to him as such until otherwise) a prototype of the website and he IMMEDIATELY STARTED TRYING TO BREAK THE SITE.
 
-![Lots of spam and bs](photosandblogs/coolguyspam1.png "coolguy's shenanigans 1")
+![Lots of spam and bs](files/coolguyspam1.png "coolguy's shenanigans 1")
 
-![Lots of spam and bs](photosandblogs/coolguyspam2.png "coolguy's shenanigans 2")
+![Lots of spam and bs](files/coolguyspam2.png "coolguy's shenanigans 2")
 
-![Lots of spam and bs](photosandblogs/coolguyspam3.png "coolguy's shenanigans 3")
+![Lots of spam and bs](files/coolguyspam3.png "coolguy's shenanigans 3")
 
 I will keep one of each bs message as a sort of artifact of the past, but I WILL try and prevent spam as well as possible without building a bot.
 

@@ -14,22 +14,18 @@
 </head>
 <body>
     <header>
-        <img src="photosandblogs/banner.png">
+        <img src="files/banner.png">
     </header>
     <div class="row">
         <div class="column">
-            <div class="section">
-                <h1>About Me</h1>
-                <p>
-                    Hi. I'm Nest(of ghosts). I'm canonically the chicken, currently residing in Canada. I like trains(but not as much as other ppl), and games(I'm very bad at them tho), and making stuff (Like this website!)
-                </p>
+            <div id="aboutMe" class="section">
             </div>
             <div id="blogPreview">
             </div>
             <div class="section">
                 <a href="gallery.html">
                 <h1>Photo Gallery</h1>
-                <img src="photosandblogs/chick.jpeg">
+                <img src="files/chick.jpeg">
                 </a>
             </div>
         </div>
@@ -54,10 +50,10 @@
         </div>
     </div>
     <script>
-        fetch("photosandblogs/index.json")
+        fetch("files/index.json")
             .then (index => index.json())
                 .then (filelist => filelist[0])
-                    .then (firstpost => fetch ("photosandblogs/" + firstpost))
+                    .then (firstpost => fetch ("files/" + firstpost))
                         .then (post => post.text())
                             .then (text => {
                                 const post = document.createElement("div")
@@ -95,7 +91,15 @@
         }   
         document.getElementById("showcase").onclick =  () => {
             window.location.href = "projects.html"
-        }                  
+        }       
+        
+        fetch("files/AboutMe.md")
+            .then(file => file.text())
+                .then(abtme => {
+                    const someText = document.createElement("div")
+                    someText.innerHTML = marked.parse(abtme)
+                    document.getElementById("aboutMe").appendChild(someText)
+                })
 
     </script>
 </body>

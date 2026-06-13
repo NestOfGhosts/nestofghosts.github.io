@@ -6,4 +6,4 @@ Building the Blog section really helped my learn some beginner javascript. Js is
 
 The posts are markdown files, organized with a json list. Javascript in the HTML extracts the list, then extracts the files referenced in the list, then creates a new section square thing, and puts the post file into the square (omg saying it in plain english makes me realize this is so simple lol).
 
-![The javascript code for the blog page](photosandblogs/finalblogcode.png)
+![The javascript code for the blog page](files/finalblogcode.png)

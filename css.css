@@ -113,7 +113,7 @@ header {
 }
 
 .gallery {
-    columns: 4;
+    columns: 3;
     font-size: small;
     gap: 2em;
 

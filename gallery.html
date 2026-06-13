@@ -14,14 +14,14 @@
 <body>
     <header>
         <a href="index.html">
-            <img src="photosandblogs/banner.png">
+            <img src="files/banner.png">
         </a>
     </header>
 
     <div id="gallerySection" class="gallery"></div>
 
     <script>
-    fetch("photosandblogs/photolist.json")
+    fetch("files/photolist.json")
         .then(file => file.json())
             .then(list => {
                 list.forEach(photo => {
@@ -29,7 +29,7 @@
                     section.classList.add("section")
 
                     const clickable = document.createElement("a")
-                    clickable.href = "photosandblogs/" + photo.file
+                    clickable.href = "files/" + photo.file
 
                     const title = document.createElement("h2")
                     title.textContent = photo.title
@@ -40,7 +40,7 @@
                     clickable.appendChild(date)
 
                     const image = document.createElement("img")
-                    image.src = "photosandblogs/" + photo.file
+                    image.src = "files/" + photo.file
                     clickable.appendChild(image)
 
                     section.appendChild(clickable)

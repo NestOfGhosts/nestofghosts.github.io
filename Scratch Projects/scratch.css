@@ -1,0 +1,53 @@
+:root {
+    --text: #f5f5f5;
+    --font: "Inconsolata", monospace;
+    --backMain: #090808;
+    --back2: #2a2a2a;
+    --accent1: #5B00A6;
+    --accent2: #2E004A;
+}
+
+body {
+    color: var(--text);
+    background-color: var(--backMain);
+    font-family: var(--font);
+    font-size: larger;
+    
+    h1 {
+        text-align: center;
+    }
+    :link {
+        color: var(--text);
+        text-align: left;
+        text-decoration: none;
+    }
+    :visited {
+        text-align: left;
+        color: var(--text);
+        text-decoration: none;
+    }
+}
+
+header {
+    height: 180px;
+    background-image: linear-gradient(to bottom, var(--accent1), var(--backMain));
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+}
+
+.section {
+    border-radius: .1in;
+    background-color: var(--back2);
+    text-align: center;
+    margin-left: 7em;
+    margin-right: 7em;
+    margin-top: 3em;
+    padding: 0.4em;
+    iframe {
+        display: block;
+        margin: auto;
+    }
+}
